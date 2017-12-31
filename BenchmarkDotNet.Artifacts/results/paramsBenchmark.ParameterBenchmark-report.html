@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ParameterBenchmark</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.11, OS=Windows 10 Threshold 2 [1511, November Update] (10.0.10586.0)
+Processor=Intel Core i5-7360U CPU 2.30GHz (Kaby Lake), ProcessorCount=2
+.NET Core SDK=2.1.3
+  [Host]     : .NET Core 2.0.4 (Framework 4.6.25921.01), 64bit RyuJIT
+  DefaultJob : .NET Core 2.0.4 (Framework 4.6.25921.01), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>       Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>ClassicWithRef</td><td>40.89 ns</td><td>0.5632 ns</td><td>0.4703 ns</td><td>41.00 ns</td><td>0.0114</td><td>24 B</td>
+</tr><tr><td>ClassicWithRefArray</td><td>322.83 ns</td><td>2.8397 ns</td><td>2.2170 ns</td><td>322.82 ns</td><td>0.3352</td><td>704 B</td>
+</tr><tr><td>ParamsWithRef</td><td>311.31 ns</td><td>6.2609 ns</td><td>15.8221 ns</td><td>303.55 ns</td><td>0.3352</td><td>704 B</td>
+</tr></tbody></table>
+</body>
+</html>

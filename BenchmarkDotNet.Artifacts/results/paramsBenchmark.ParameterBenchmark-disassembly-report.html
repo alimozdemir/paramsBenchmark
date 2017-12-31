@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output ParameterBenchmark</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="3">ParameterBenchmark</th></tr>
+<tr>
+<th>ClassicWithRef .NET Core 2.0.4 (Framework 4.6.25921.01), 64bit RyuJIT</th>
+<th>ClassicWithRefArray .NET Core 2.0.4 (Framework 4.6.25921.01), 64bit RyuJIT</th>
+<th>ParamsWithRef .NET Core 2.0.4 (Framework 4.6.25921.01), 64bit RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+00007fff`0dfecf60 paramsBenchmark.ParameterBenchmark.ClassicWithRef()
+00007fff`0dfecf64 48b9a8e00b0eff7f0000 mov rcx,7FFF0E0BE0A8h
+00007fff`0dfecf6e e87d73ad5f      call    coreclr!MetaDataGetDispenser+0x72810 (00007fff`6dac42f0)
+00007fff`0dfecf73 c740080a000000  mov     dword ptr [rax+8],0Ah
+00007fff`0dfecf7a 33c0            xor     eax,eax
+00007fff`0dfecf7c 85c0            test    eax,eax
+00007fff`0dfecf7e 7508            jne     00007fff`0dfecf88
+00007fff`0dfecf80 ff05f2960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecf86 eb73            jmp     00007fff`0dfecffb
+00007fff`0dfecf88 83f801          cmp     eax,1
+00007fff`0dfecf8b 7508            jne     00007fff`0dfecf95
+00007fff`0dfecf8d ff05e5960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecf93 eb66            jmp     00007fff`0dfecffb
+00007fff`0dfecf95 83f802          cmp     eax,2
+00007fff`0dfecf98 7508            jne     00007fff`0dfecfa2
+00007fff`0dfecf9a ff05d8960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfa0 eb59            jmp     00007fff`0dfecffb
+00007fff`0dfecfa2 83f803          cmp     eax,3
+00007fff`0dfecfa5 7508            jne     00007fff`0dfecfaf
+00007fff`0dfecfa7 ff05cb960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfad eb4c            jmp     00007fff`0dfecffb
+00007fff`0dfecfaf 83f804          cmp     eax,4
+00007fff`0dfecfb2 7508            jne     00007fff`0dfecfbc
+00007fff`0dfecfb4 ff05be960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfba eb3f            jmp     00007fff`0dfecffb
+00007fff`0dfecfbc 83f805          cmp     eax,5
+00007fff`0dfecfbf 7508            jne     00007fff`0dfecfc9
+00007fff`0dfecfc1 ff05b1960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfc7 eb32            jmp     00007fff`0dfecffb
+00007fff`0dfecfc9 83f806          cmp     eax,6
+00007fff`0dfecfcc 7508            jne     00007fff`0dfecfd6
+00007fff`0dfecfce ff05a4960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfd4 eb25            jmp     00007fff`0dfecffb
+00007fff`0dfecfd6 83f807          cmp     eax,7
+00007fff`0dfecfd9 7508            jne     00007fff`0dfecfe3
+00007fff`0dfecfdb ff0597960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfe1 eb18            jmp     00007fff`0dfecffb
+00007fff`0dfecfe3 83f808          cmp     eax,8
+00007fff`0dfecfe6 7508            jne     00007fff`0dfecff0
+00007fff`0dfecfe8 ff058a960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecfee eb0b            jmp     00007fff`0dfecffb
+00007fff`0dfecff0 83f809          cmp     eax,9
+00007fff`0dfecff3 7506            jne     00007fff`0dfecffb
+00007fff`0dfecff5 ff057d960400    inc     dword ptr [00007fff`0e036678]
+00007fff`0dfecffb ffc0            inc     eax
+00007fff`0dfecffd 83f80a          cmp     eax,0Ah
+00007fff`0dfed000 0f8c76ffffff    jl      00007fff`0dfecf7c
+00007fff`0dfed006 4883c428        add     rsp,28h
+
+Method got inlined
+paramsBenchmark.RefType..ctor(Int32)
+paramsBenchmark.FooClassic.BarObject(System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+paramsBenchmark.FooClassic.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007fff`0dfecf60 paramsBenchmark.ParameterBenchmark.ClassicWithRefArray()
+00007fff`0dfecf6c 48b9a8e00b0eff7f0000 mov rcx,7FFF0E0BE0A8h
+00007fff`0dfecf76 e87573ad5f      call    coreclr!MetaDataGetDispenser+0x72810 (00007fff`6dac42f0)
+00007fff`0dfecf7b c740080a000000  mov     dword ptr [rax+8],0Ah
+00007fff`0dfecf82 488bf0          mov     rsi,rax
+00007fff`0dfecf85 33ff            xor     edi,edi
+00007fff`0dfecf87 85ff            test    edi,edi
+00007fff`0dfecf89 750d            jne     00007fff`0dfecf98
+00007fff`0dfecf8b 488bce          mov     rcx,rsi
+00007fff`0dfecf8e e86deeffff      call    00007fff`0dfebe00
+00007fff`0dfecf93 e948010000      jmp     00007fff`0dfed0e0
+00007fff`0dfecf98 83ff01          cmp     edi,1
+00007fff`0dfecf9b 7510            jne     00007fff`0dfecfad
+00007fff`0dfecf9d 488bce          mov     rcx,rsi
+00007fff`0dfecfa0 488bd6          mov     rdx,rsi
+00007fff`0dfecfa3 e860eeffff      call    00007fff`0dfebe08
+00007fff`0dfecfa8 e933010000      jmp     00007fff`0dfed0e0
+00007fff`0dfecfad 83ff02          cmp     edi,2
+00007fff`0dfecfb0 7513            jne     00007fff`0dfecfc5
+00007fff`0dfecfb2 488bce          mov     rcx,rsi
+00007fff`0dfecfb5 488bd6          mov     rdx,rsi
+00007fff`0dfecfb8 4c8bc6          mov     r8,rsi
+00007fff`0dfecfbb e850eeffff      call    00007fff`0dfebe10
+00007fff`0dfecfc0 e91b010000      jmp     00007fff`0dfed0e0
+00007fff`0dfecfc5 83ff03          cmp     edi,3
+00007fff`0dfecfc8 7516            jne     00007fff`0dfecfe0
+00007fff`0dfecfca 488bce          mov     rcx,rsi
+00007fff`0dfecfcd 488bd6          mov     rdx,rsi
+00007fff`0dfecfd0 4c8bc6          mov     r8,rsi
+00007fff`0dfecfd3 4c8bce          mov     r9,rsi
+00007fff`0dfecfd6 e83deeffff      call    00007fff`0dfebe18
+00007fff`0dfecfdb e900010000      jmp     00007fff`0dfed0e0
+00007fff`0dfecfe0 83ff04          cmp     edi,4
+00007fff`0dfecfe3 751b            jne     00007fff`0dfed000
+00007fff`0dfecfe5 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfecfea 488bce          mov     rcx,rsi
+00007fff`0dfecfed 488bd6          mov     rdx,rsi
+00007fff`0dfecff0 4c8bc6          mov     r8,rsi
+00007fff`0dfecff3 4c8bce          mov     r9,rsi
+00007fff`0dfecff6 e825eeffff      call    00007fff`0dfebe20
+00007fff`0dfecffb e9e0000000      jmp     00007fff`0dfed0e0
+00007fff`0dfed000 83ff05          cmp     edi,5
+00007fff`0dfed003 7520            jne     00007fff`0dfed025
+00007fff`0dfed005 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfed00a 4889742428      mov     qword ptr [rsp+28h],rsi
+00007fff`0dfed00f 488bce          mov     rcx,rsi
+00007fff`0dfed012 488bd6          mov     rdx,rsi
+00007fff`0dfed015 4c8bc6          mov     r8,rsi
+00007fff`0dfed018 4c8bce          mov     r9,rsi
+00007fff`0dfed01b e808eeffff      call    00007fff`0dfebe28
+00007fff`0dfed020 e9bb000000      jmp     00007fff`0dfed0e0
+00007fff`0dfed025 83ff06          cmp     edi,6
+00007fff`0dfed028 7525            jne     00007fff`0dfed04f
+00007fff`0dfed02a 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfed02f 4889742428      mov     qword ptr [rsp+28h],rsi
+00007fff`0dfed034 4889742430      mov     qword ptr [rsp+30h],rsi
+00007fff`0dfed039 488bce          mov     rcx,rsi
+00007fff`0dfed03c 488bd6          mov     rdx,rsi
+00007fff`0dfed03f 4c8bc6          mov     r8,rsi
+00007fff`0dfed042 4c8bce          mov     r9,rsi
+00007fff`0dfed045 e8e6edffff      call    00007fff`0dfebe30
+00007fff`0dfed04a e991000000      jmp     00007fff`0dfed0e0
+00007fff`0dfed04f 83ff07          cmp     edi,7
+00007fff`0dfed052 7527            jne     00007fff`0dfed07b
+00007fff`0dfed054 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfed059 4889742428      mov     qword ptr [rsp+28h],rsi
+00007fff`0dfed05e 4889742430      mov     qword ptr [rsp+30h],rsi
+00007fff`0dfed063 4889742438      mov     qword ptr [rsp+38h],rsi
+00007fff`0dfed068 488bce          mov     rcx,rsi
+00007fff`0dfed06b 488bd6          mov     rdx,rsi
+00007fff`0dfed06e 4c8bc6          mov     r8,rsi
+00007fff`0dfed071 4c8bce          mov     r9,rsi
+00007fff`0dfed074 e8bfedffff      call    00007fff`0dfebe38
+00007fff`0dfed079 eb65            jmp     00007fff`0dfed0e0
+00007fff`0dfed07b 83ff08          cmp     edi,8
+00007fff`0dfed07e 752c            jne     00007fff`0dfed0ac
+00007fff`0dfed080 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfed085 4889742428      mov     qword ptr [rsp+28h],rsi
+00007fff`0dfed08a 4889742430      mov     qword ptr [rsp+30h],rsi
+00007fff`0dfed08f 4889742438      mov     qword ptr [rsp+38h],rsi
+00007fff`0dfed094 4889742440      mov     qword ptr [rsp+40h],rsi
+00007fff`0dfed099 488bce          mov     rcx,rsi
+00007fff`0dfed09c 488bd6          mov     rdx,rsi
+00007fff`0dfed09f 4c8bc6          mov     r8,rsi
+00007fff`0dfed0a2 4c8bce          mov     r9,rsi
+00007fff`0dfed0a5 e896edffff      call    00007fff`0dfebe40
+00007fff`0dfed0aa eb34            jmp     00007fff`0dfed0e0
+00007fff`0dfed0ac 83ff09          cmp     edi,9
+00007fff`0dfed0af 752f            jne     00007fff`0dfed0e0
+00007fff`0dfed0b1 4889742420      mov     qword ptr [rsp+20h],rsi
+00007fff`0dfed0b6 4889742428      mov     qword ptr [rsp+28h],rsi
+00007fff`0dfed0bb 4889742430      mov     qword ptr [rsp+30h],rsi
+00007fff`0dfed0c0 4889742438      mov     qword ptr [rsp+38h],rsi
+00007fff`0dfed0c5 4889742440      mov     qword ptr [rsp+40h],rsi
+00007fff`0dfed0ca 4889742448      mov     qword ptr [rsp+48h],rsi
+00007fff`0dfed0cf 488bce          mov     rcx,rsi
+00007fff`0dfed0d2 488bd6          mov     rdx,rsi
+00007fff`0dfed0d5 4c8bc6          mov     r8,rsi
+00007fff`0dfed0d8 4c8bce          mov     r9,rsi
+00007fff`0dfed0db e868edffff      call    00007fff`0dfebe48
+00007fff`0dfed0e0 ffc7            inc     edi
+00007fff`0dfed0e2 83ff0a          cmp     edi,0Ah
+00007fff`0dfed0e5 0f8c9cfeffff    jl      00007fff`0dfecf87
+00007fff`0dfed0eb 488d65f0        lea     rsp,[rbp-10h]
+
+00007fff`0dfed110 paramsBenchmark.FooClassicWithArray.BarObject(System.Object)
+00007fff`0dfed118 ff0562950400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed11e 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed128 ba01000000      mov     edx,1
+00007fff`0dfed12d e80e73ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed132 488bc8          mov     rcx,rax
+00007fff`0dfed135 4c8bc6          mov     r8,rsi
+00007fff`0dfed138 33d2            xor     edx,edx
+00007fff`0dfed13a e84157ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed13f 90              nop
+
+00007fff`0dfed160 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object)
+00007fff`0dfed16d ff050d950400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed173 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed17d ba02000000      mov     edx,2
+00007fff`0dfed182 e8b972ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed187 488bd8          mov     rbx,rax
+00007fff`0dfed18a 488bcb          mov     rcx,rbx
+00007fff`0dfed18d 4c8bc6          mov     r8,rsi
+00007fff`0dfed190 33d2            xor     edx,edx
+00007fff`0dfed192 e8e956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed197 488bcb          mov     rcx,rbx
+00007fff`0dfed19a 4c8bc7          mov     r8,rdi
+00007fff`0dfed19d ba01000000      mov     edx,1
+00007fff`0dfed1a2 e8d956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed1a7 90              nop
+
+00007fff`0dfed1d0 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object)
+00007fff`0dfed1e1 ff0599940400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed1e7 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed1f1 ba03000000      mov     edx,3
+00007fff`0dfed1f6 e84572ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed1fb 488be8          mov     rbp,rax
+00007fff`0dfed1fe 488bcd          mov     rcx,rbp
+00007fff`0dfed201 4c8bc6          mov     r8,rsi
+00007fff`0dfed204 33d2            xor     edx,edx
+00007fff`0dfed206 e87556ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed20b 488bcd          mov     rcx,rbp
+00007fff`0dfed20e 4c8bc7          mov     r8,rdi
+00007fff`0dfed211 ba01000000      mov     edx,1
+00007fff`0dfed216 e86556ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed21b 488bcd          mov     rcx,rbp
+00007fff`0dfed21e 4c8bc3          mov     r8,rbx
+00007fff`0dfed221 ba02000000      mov     edx,2
+00007fff`0dfed226 e85556ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed22b 90              nop
+
+00007fff`0dfed260 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed276 ff0504940400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed27c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed286 ba04000000      mov     edx,4
+00007fff`0dfed28b e8b071ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed290 4c8bf0          mov     r14,rax
+00007fff`0dfed293 498bce          mov     rcx,r14
+00007fff`0dfed296 4c8bc6          mov     r8,rsi
+00007fff`0dfed299 33d2            xor     edx,edx
+00007fff`0dfed29b e8e055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2a0 498bce          mov     rcx,r14
+00007fff`0dfed2a3 4c8bc7          mov     r8,rdi
+00007fff`0dfed2a6 ba01000000      mov     edx,1
+00007fff`0dfed2ab e8d055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2b0 498bce          mov     rcx,r14
+00007fff`0dfed2b3 4c8bc3          mov     r8,rbx
+00007fff`0dfed2b6 ba02000000      mov     edx,2
+00007fff`0dfed2bb e8c055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2c0 498bce          mov     rcx,r14
+00007fff`0dfed2c3 4c8bc5          mov     r8,rbp
+00007fff`0dfed2c6 ba03000000      mov     edx,3
+00007fff`0dfed2cb e8b055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2d0 90              nop
+
+00007fff`0dfed300 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed316 ff0564930400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed31c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed326 ba05000000      mov     edx,5
+00007fff`0dfed32b e81071ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed330 4c8bf0          mov     r14,rax
+00007fff`0dfed333 498bce          mov     rcx,r14
+00007fff`0dfed336 4c8bc6          mov     r8,rsi
+00007fff`0dfed339 33d2            xor     edx,edx
+00007fff`0dfed33b e84055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed340 498bce          mov     rcx,r14
+00007fff`0dfed343 4c8bc7          mov     r8,rdi
+00007fff`0dfed346 ba01000000      mov     edx,1
+00007fff`0dfed34b e83055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed350 498bce          mov     rcx,r14
+00007fff`0dfed353 4c8bc3          mov     r8,rbx
+00007fff`0dfed356 ba02000000      mov     edx,2
+00007fff`0dfed35b e82055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed360 498bce          mov     rcx,r14
+00007fff`0dfed363 4c8bc5          mov     r8,rbp
+00007fff`0dfed366 ba03000000      mov     edx,3
+00007fff`0dfed36b e81055ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed370 498bce          mov     rcx,r14
+00007fff`0dfed373 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed378 ba04000000      mov     edx,4
+00007fff`0dfed37d e8fe54ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed382 90              nop
+
+00007fff`0dfed3b0 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed3c6 ff05b4920400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed3cc 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed3d6 ba06000000      mov     edx,6
+00007fff`0dfed3db e86070ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed3e0 4c8bf0          mov     r14,rax
+00007fff`0dfed3e3 498bce          mov     rcx,r14
+00007fff`0dfed3e6 4c8bc6          mov     r8,rsi
+00007fff`0dfed3e9 33d2            xor     edx,edx
+00007fff`0dfed3eb e89054ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed3f0 498bce          mov     rcx,r14
+00007fff`0dfed3f3 4c8bc7          mov     r8,rdi
+00007fff`0dfed3f6 ba01000000      mov     edx,1
+00007fff`0dfed3fb e88054ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed400 498bce          mov     rcx,r14
+00007fff`0dfed403 4c8bc3          mov     r8,rbx
+00007fff`0dfed406 ba02000000      mov     edx,2
+00007fff`0dfed40b e87054ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed410 498bce          mov     rcx,r14
+00007fff`0dfed413 4c8bc5          mov     r8,rbp
+00007fff`0dfed416 ba03000000      mov     edx,3
+00007fff`0dfed41b e86054ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed420 498bce          mov     rcx,r14
+00007fff`0dfed423 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed428 ba04000000      mov     edx,4
+00007fff`0dfed42d e84e54ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed432 498bce          mov     rcx,r14
+00007fff`0dfed435 4c8b442478      mov     r8,qword ptr [rsp+78h]
+00007fff`0dfed43a ba05000000      mov     edx,5
+00007fff`0dfed43f e83c54ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed444 90              nop
+
+00007fff`0dfed470 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed486 ff05f4910400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed48c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed496 ba07000000      mov     edx,7
+00007fff`0dfed49b e8a06fad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed4a0 4c8bf0          mov     r14,rax
+00007fff`0dfed4a3 498bce          mov     rcx,r14
+00007fff`0dfed4a6 4c8bc6          mov     r8,rsi
+00007fff`0dfed4a9 33d2            xor     edx,edx
+00007fff`0dfed4ab e8d053ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed4b0 498bce          mov     rcx,r14
+00007fff`0dfed4b3 4c8bc7          mov     r8,rdi
+00007fff`0dfed4b6 ba01000000      mov     edx,1
+00007fff`0dfed4bb e8c053ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed4c0 498bce          mov     rcx,r14
+00007fff`0dfed4c3 4c8bc3          mov     r8,rbx
+00007fff`0dfed4c6 ba02000000      mov     edx,2
+00007fff`0dfed4cb e8b053ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed4d0 498bce          mov     rcx,r14
+00007fff`0dfed4d3 4c8bc5          mov     r8,rbp
+00007fff`0dfed4d6 ba03000000      mov     edx,3
+00007fff`0dfed4db e8a053ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed4e0 498bce          mov     rcx,r14
+00007fff`0dfed4e3 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed4e8 ba04000000      mov     edx,4
+00007fff`0dfed4ed e88e53ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed4f2 498bce          mov     rcx,r14
+00007fff`0dfed4f5 4c8b442478      mov     r8,qword ptr [rsp+78h]
+00007fff`0dfed4fa ba05000000      mov     edx,5
+00007fff`0dfed4ff e87c53ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed504 498bce          mov     rcx,r14
+00007fff`0dfed507 4c8b842480000000 mov     r8,qword ptr [rsp+80h]
+00007fff`0dfed50f ba06000000      mov     edx,6
+00007fff`0dfed514 e86753ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed519 90              nop
+
+00007fff`0dfed550 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed566 ff0514910400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed56c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed576 ba08000000      mov     edx,8
+00007fff`0dfed57b e8c06ead5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed580 4c8bf0          mov     r14,rax
+00007fff`0dfed583 498bce          mov     rcx,r14
+00007fff`0dfed586 4c8bc6          mov     r8,rsi
+00007fff`0dfed589 33d2            xor     edx,edx
+00007fff`0dfed58b e8f052ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed590 498bce          mov     rcx,r14
+00007fff`0dfed593 4c8bc7          mov     r8,rdi
+00007fff`0dfed596 ba01000000      mov     edx,1
+00007fff`0dfed59b e8e052ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5a0 498bce          mov     rcx,r14
+00007fff`0dfed5a3 4c8bc3          mov     r8,rbx
+00007fff`0dfed5a6 ba02000000      mov     edx,2
+00007fff`0dfed5ab e8d052ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5b0 498bce          mov     rcx,r14
+00007fff`0dfed5b3 4c8bc5          mov     r8,rbp
+00007fff`0dfed5b6 ba03000000      mov     edx,3
+00007fff`0dfed5bb e8c052ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5c0 498bce          mov     rcx,r14
+00007fff`0dfed5c3 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed5c8 ba04000000      mov     edx,4
+00007fff`0dfed5cd e8ae52ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5d2 498bce          mov     rcx,r14
+00007fff`0dfed5d5 4c8b442478      mov     r8,qword ptr [rsp+78h]
+00007fff`0dfed5da ba05000000      mov     edx,5
+00007fff`0dfed5df e89c52ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5e4 498bce          mov     rcx,r14
+00007fff`0dfed5e7 4c8b842480000000 mov     r8,qword ptr [rsp+80h]
+00007fff`0dfed5ef ba06000000      mov     edx,6
+00007fff`0dfed5f4 e88752ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed5f9 498bce          mov     rcx,r14
+00007fff`0dfed5fc 4c8b842488000000 mov     r8,qword ptr [rsp+88h]
+00007fff`0dfed604 ba07000000      mov     edx,7
+00007fff`0dfed609 e87252ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed60e 90              nop
+
+00007fff`0dfed640 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed656 ff0524900400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed65c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed666 ba09000000      mov     edx,9
+00007fff`0dfed66b e8d06dad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed670 4c8bf0          mov     r14,rax
+00007fff`0dfed673 498bce          mov     rcx,r14
+00007fff`0dfed676 4c8bc6          mov     r8,rsi
+00007fff`0dfed679 33d2            xor     edx,edx
+00007fff`0dfed67b e80052ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed680 498bce          mov     rcx,r14
+00007fff`0dfed683 4c8bc7          mov     r8,rdi
+00007fff`0dfed686 ba01000000      mov     edx,1
+00007fff`0dfed68b e8f051ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed690 498bce          mov     rcx,r14
+00007fff`0dfed693 4c8bc3          mov     r8,rbx
+00007fff`0dfed696 ba02000000      mov     edx,2
+00007fff`0dfed69b e8e051ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6a0 498bce          mov     rcx,r14
+00007fff`0dfed6a3 4c8bc5          mov     r8,rbp
+00007fff`0dfed6a6 ba03000000      mov     edx,3
+00007fff`0dfed6ab e8d051ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6b0 498bce          mov     rcx,r14
+00007fff`0dfed6b3 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed6b8 ba04000000      mov     edx,4
+00007fff`0dfed6bd e8be51ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6c2 498bce          mov     rcx,r14
+00007fff`0dfed6c5 4c8b442478      mov     r8,qword ptr [rsp+78h]
+00007fff`0dfed6ca ba05000000      mov     edx,5
+00007fff`0dfed6cf e8ac51ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6d4 498bce          mov     rcx,r14
+00007fff`0dfed6d7 4c8b842480000000 mov     r8,qword ptr [rsp+80h]
+00007fff`0dfed6df ba06000000      mov     edx,6
+00007fff`0dfed6e4 e89751ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6e9 498bce          mov     rcx,r14
+00007fff`0dfed6ec 4c8b842488000000 mov     r8,qword ptr [rsp+88h]
+00007fff`0dfed6f4 ba07000000      mov     edx,7
+00007fff`0dfed6f9 e88251ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed6fe 498bce          mov     rcx,r14
+00007fff`0dfed701 4c8b842490000000 mov     r8,qword ptr [rsp+90h]
+00007fff`0dfed709 ba08000000      mov     edx,8
+00007fff`0dfed70e e86d51ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed713 90              nop
+
+00007fff`0dfed740 paramsBenchmark.FooClassicWithArray.BarObject(System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object, System.Object)
+00007fff`0dfed756 ff05248f0400    inc     dword ptr [00007fff`0e036680]
+00007fff`0dfed75c 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed766 ba0a000000      mov     edx,0Ah
+00007fff`0dfed76b e8d06cad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed770 4c8bf0          mov     r14,rax
+00007fff`0dfed773 498bce          mov     rcx,r14
+00007fff`0dfed776 4c8bc6          mov     r8,rsi
+00007fff`0dfed779 33d2            xor     edx,edx
+00007fff`0dfed77b e80051ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed780 498bce          mov     rcx,r14
+00007fff`0dfed783 4c8bc7          mov     r8,rdi
+00007fff`0dfed786 ba01000000      mov     edx,1
+00007fff`0dfed78b e8f050ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed790 498bce          mov     rcx,r14
+00007fff`0dfed793 4c8bc3          mov     r8,rbx
+00007fff`0dfed796 ba02000000      mov     edx,2
+00007fff`0dfed79b e8e050ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7a0 498bce          mov     rcx,r14
+00007fff`0dfed7a3 4c8bc5          mov     r8,rbp
+00007fff`0dfed7a6 ba03000000      mov     edx,3
+00007fff`0dfed7ab e8d050ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7b0 498bce          mov     rcx,r14
+00007fff`0dfed7b3 4c8b442470      mov     r8,qword ptr [rsp+70h]
+00007fff`0dfed7b8 ba04000000      mov     edx,4
+00007fff`0dfed7bd e8be50ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7c2 498bce          mov     rcx,r14
+00007fff`0dfed7c5 4c8b442478      mov     r8,qword ptr [rsp+78h]
+00007fff`0dfed7ca ba05000000      mov     edx,5
+00007fff`0dfed7cf e8ac50ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7d4 498bce          mov     rcx,r14
+00007fff`0dfed7d7 4c8b842480000000 mov     r8,qword ptr [rsp+80h]
+00007fff`0dfed7df ba06000000      mov     edx,6
+00007fff`0dfed7e4 e89750ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7e9 498bce          mov     rcx,r14
+00007fff`0dfed7ec 4c8b842488000000 mov     r8,qword ptr [rsp+88h]
+00007fff`0dfed7f4 ba07000000      mov     edx,7
+00007fff`0dfed7f9 e88250ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed7fe 498bce          mov     rcx,r14
+00007fff`0dfed801 4c8b842490000000 mov     r8,qword ptr [rsp+90h]
+00007fff`0dfed809 ba08000000      mov     edx,8
+00007fff`0dfed80e e86d50ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed813 498bce          mov     rcx,r14
+00007fff`0dfed816 4c8b842498000000 mov     r8,qword ptr [rsp+98h]
+00007fff`0dfed81e ba09000000      mov     edx,9
+00007fff`0dfed823 e85850ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed828 90              nop
+
+Method got inlined
+paramsBenchmark.RefType..ctor(Int32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007fff`0dfecf60 paramsBenchmark.ParameterBenchmark.ParamsWithRef()
+00007fff`0dfecf67 48b9a8e00b0eff7f0000 mov rcx,7FFF0E0BE0A8h
+00007fff`0dfecf71 e87a73ad5f      call    coreclr!MetaDataGetDispenser+0x72810 (00007fff`6dac42f0)
+00007fff`0dfecf76 c740080a000000  mov     dword ptr [rax+8],0Ah
+00007fff`0dfecf7d 488bf0          mov     rsi,rax
+00007fff`0dfecf80 33ff            xor     edi,edi
+00007fff`0dfecf82 85ff            test    edi,edi
+00007fff`0dfecf84 752c            jne     00007fff`0dfecfb2
+00007fff`0dfecf86 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfecf90 ba01000000      mov     edx,1
+00007fff`0dfecf95 e8a674ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfecf9a 488bc8          mov     rcx,rax
+00007fff`0dfecf9d 4c8bc6          mov     r8,rsi
+00007fff`0dfecfa0 33d2            xor     edx,edx
+00007fff`0dfecfa2 e8d958ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfecfa7 ff05d7960400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfecfad e9b3040000      jmp     00007fff`0dfed465
+00007fff`0dfecfb2 83ff01          cmp     edi,1
+00007fff`0dfecfb5 753f            jne     00007fff`0dfecff6
+00007fff`0dfecfb7 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfecfc1 ba02000000      mov     edx,2
+00007fff`0dfecfc6 e87574ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfecfcb 488bd8          mov     rbx,rax
+00007fff`0dfecfce 488bcb          mov     rcx,rbx
+00007fff`0dfecfd1 4c8bc6          mov     r8,rsi
+00007fff`0dfecfd4 33d2            xor     edx,edx
+00007fff`0dfecfd6 e8a558ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfecfdb 488bcb          mov     rcx,rbx
+00007fff`0dfecfde 4c8bc6          mov     r8,rsi
+00007fff`0dfecfe1 ba01000000      mov     edx,1
+00007fff`0dfecfe6 e89558ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfecfeb ff0593960400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfecff1 e96f040000      jmp     00007fff`0dfed465
+00007fff`0dfecff6 83ff02          cmp     edi,2
+00007fff`0dfecff9 754f            jne     00007fff`0dfed04a
+00007fff`0dfecffb 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed005 ba03000000      mov     edx,3
+00007fff`0dfed00a e83174ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed00f 488bd8          mov     rbx,rax
+00007fff`0dfed012 488bcb          mov     rcx,rbx
+00007fff`0dfed015 4c8bc6          mov     r8,rsi
+00007fff`0dfed018 33d2            xor     edx,edx
+00007fff`0dfed01a e86158ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed01f 488bcb          mov     rcx,rbx
+00007fff`0dfed022 4c8bc6          mov     r8,rsi
+00007fff`0dfed025 ba01000000      mov     edx,1
+00007fff`0dfed02a e85158ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed02f 488bcb          mov     rcx,rbx
+00007fff`0dfed032 4c8bc6          mov     r8,rsi
+00007fff`0dfed035 ba02000000      mov     edx,2
+00007fff`0dfed03a e84158ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed03f ff053f960400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed045 e91b040000      jmp     00007fff`0dfed465
+00007fff`0dfed04a 83ff03          cmp     edi,3
+00007fff`0dfed04d 755f            jne     00007fff`0dfed0ae
+00007fff`0dfed04f 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed059 ba04000000      mov     edx,4
+00007fff`0dfed05e e8dd73ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed063 488bd8          mov     rbx,rax
+00007fff`0dfed066 488bcb          mov     rcx,rbx
+00007fff`0dfed069 4c8bc6          mov     r8,rsi
+00007fff`0dfed06c 33d2            xor     edx,edx
+00007fff`0dfed06e e80d58ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed073 488bcb          mov     rcx,rbx
+00007fff`0dfed076 4c8bc6          mov     r8,rsi
+00007fff`0dfed079 ba01000000      mov     edx,1
+00007fff`0dfed07e e8fd57ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed083 488bcb          mov     rcx,rbx
+00007fff`0dfed086 4c8bc6          mov     r8,rsi
+00007fff`0dfed089 ba02000000      mov     edx,2
+00007fff`0dfed08e e8ed57ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed093 488bcb          mov     rcx,rbx
+00007fff`0dfed096 4c8bc6          mov     r8,rsi
+00007fff`0dfed099 ba03000000      mov     edx,3
+00007fff`0dfed09e e8dd57ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed0a3 ff05db950400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed0a9 e9b7030000      jmp     00007fff`0dfed465
+00007fff`0dfed0ae 83ff04          cmp     edi,4
+00007fff`0dfed0b1 756f            jne     00007fff`0dfed122
+00007fff`0dfed0b3 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed0bd ba05000000      mov     edx,5
+00007fff`0dfed0c2 e87973ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed0c7 488bd8          mov     rbx,rax
+00007fff`0dfed0ca 488bcb          mov     rcx,rbx
+00007fff`0dfed0cd 4c8bc6          mov     r8,rsi
+00007fff`0dfed0d0 33d2            xor     edx,edx
+00007fff`0dfed0d2 e8a957ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed0d7 488bcb          mov     rcx,rbx
+00007fff`0dfed0da 4c8bc6          mov     r8,rsi
+00007fff`0dfed0dd ba01000000      mov     edx,1
+00007fff`0dfed0e2 e89957ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed0e7 488bcb          mov     rcx,rbx
+00007fff`0dfed0ea 4c8bc6          mov     r8,rsi
+00007fff`0dfed0ed ba02000000      mov     edx,2
+00007fff`0dfed0f2 e88957ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed0f7 488bcb          mov     rcx,rbx
+00007fff`0dfed0fa 4c8bc6          mov     r8,rsi
+00007fff`0dfed0fd ba03000000      mov     edx,3
+00007fff`0dfed102 e87957ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed107 488bcb          mov     rcx,rbx
+00007fff`0dfed10a 4c8bc6          mov     r8,rsi
+00007fff`0dfed10d ba04000000      mov     edx,4
+00007fff`0dfed112 e86957ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed117 ff0567950400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed11d e943030000      jmp     00007fff`0dfed465
+00007fff`0dfed122 83ff05          cmp     edi,5
+00007fff`0dfed125 0f857f000000    jne     00007fff`0dfed1aa
+00007fff`0dfed12b 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed135 ba06000000      mov     edx,6
+00007fff`0dfed13a e80173ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed13f 488bd8          mov     rbx,rax
+00007fff`0dfed142 488bcb          mov     rcx,rbx
+00007fff`0dfed145 4c8bc6          mov     r8,rsi
+00007fff`0dfed148 33d2            xor     edx,edx
+00007fff`0dfed14a e83157ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed14f 488bcb          mov     rcx,rbx
+00007fff`0dfed152 4c8bc6          mov     r8,rsi
+00007fff`0dfed155 ba01000000      mov     edx,1
+00007fff`0dfed15a e82157ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed15f 488bcb          mov     rcx,rbx
+00007fff`0dfed162 4c8bc6          mov     r8,rsi
+00007fff`0dfed165 ba02000000      mov     edx,2
+00007fff`0dfed16a e81157ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed16f 488bcb          mov     rcx,rbx
+00007fff`0dfed172 4c8bc6          mov     r8,rsi
+00007fff`0dfed175 ba03000000      mov     edx,3
+00007fff`0dfed17a e80157ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed17f 488bcb          mov     rcx,rbx
+00007fff`0dfed182 4c8bc6          mov     r8,rsi
+00007fff`0dfed185 ba04000000      mov     edx,4
+00007fff`0dfed18a e8f156ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed18f 488bcb          mov     rcx,rbx
+00007fff`0dfed192 4c8bc6          mov     r8,rsi
+00007fff`0dfed195 ba05000000      mov     edx,5
+00007fff`0dfed19a e8e156ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed19f ff05df940400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed1a5 e9bb020000      jmp     00007fff`0dfed465
+00007fff`0dfed1aa 83ff06          cmp     edi,6
+00007fff`0dfed1ad 0f858f000000    jne     00007fff`0dfed242
+00007fff`0dfed1b3 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed1bd ba07000000      mov     edx,7
+00007fff`0dfed1c2 e87972ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed1c7 488bd8          mov     rbx,rax
+00007fff`0dfed1ca 488bcb          mov     rcx,rbx
+00007fff`0dfed1cd 4c8bc6          mov     r8,rsi
+00007fff`0dfed1d0 33d2            xor     edx,edx
+00007fff`0dfed1d2 e8a956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed1d7 488bcb          mov     rcx,rbx
+00007fff`0dfed1da 4c8bc6          mov     r8,rsi
+00007fff`0dfed1dd ba01000000      mov     edx,1
+00007fff`0dfed1e2 e89956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed1e7 488bcb          mov     rcx,rbx
+00007fff`0dfed1ea 4c8bc6          mov     r8,rsi
+00007fff`0dfed1ed ba02000000      mov     edx,2
+00007fff`0dfed1f2 e88956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed1f7 488bcb          mov     rcx,rbx
+00007fff`0dfed1fa 4c8bc6          mov     r8,rsi
+00007fff`0dfed1fd ba03000000      mov     edx,3
+00007fff`0dfed202 e87956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed207 488bcb          mov     rcx,rbx
+00007fff`0dfed20a 4c8bc6          mov     r8,rsi
+00007fff`0dfed20d ba04000000      mov     edx,4
+00007fff`0dfed212 e86956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed217 488bcb          mov     rcx,rbx
+00007fff`0dfed21a 4c8bc6          mov     r8,rsi
+00007fff`0dfed21d ba05000000      mov     edx,5
+00007fff`0dfed222 e85956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed227 488bcb          mov     rcx,rbx
+00007fff`0dfed22a 4c8bc6          mov     r8,rsi
+00007fff`0dfed22d ba06000000      mov     edx,6
+00007fff`0dfed232 e84956ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed237 ff0547940400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed23d e923020000      jmp     00007fff`0dfed465
+00007fff`0dfed242 83ff07          cmp     edi,7
+00007fff`0dfed245 0f859f000000    jne     00007fff`0dfed2ea
+00007fff`0dfed24b 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed255 ba08000000      mov     edx,8
+00007fff`0dfed25a e8e171ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed25f 488bd8          mov     rbx,rax
+00007fff`0dfed262 488bcb          mov     rcx,rbx
+00007fff`0dfed265 4c8bc6          mov     r8,rsi
+00007fff`0dfed268 33d2            xor     edx,edx
+00007fff`0dfed26a e81156ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed26f 488bcb          mov     rcx,rbx
+00007fff`0dfed272 4c8bc6          mov     r8,rsi
+00007fff`0dfed275 ba01000000      mov     edx,1
+00007fff`0dfed27a e80156ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed27f 488bcb          mov     rcx,rbx
+00007fff`0dfed282 4c8bc6          mov     r8,rsi
+00007fff`0dfed285 ba02000000      mov     edx,2
+00007fff`0dfed28a e8f155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed28f 488bcb          mov     rcx,rbx
+00007fff`0dfed292 4c8bc6          mov     r8,rsi
+00007fff`0dfed295 ba03000000      mov     edx,3
+00007fff`0dfed29a e8e155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed29f 488bcb          mov     rcx,rbx
+00007fff`0dfed2a2 4c8bc6          mov     r8,rsi
+00007fff`0dfed2a5 ba04000000      mov     edx,4
+00007fff`0dfed2aa e8d155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2af 488bcb          mov     rcx,rbx
+00007fff`0dfed2b2 4c8bc6          mov     r8,rsi
+00007fff`0dfed2b5 ba05000000      mov     edx,5
+00007fff`0dfed2ba e8c155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2bf 488bcb          mov     rcx,rbx
+00007fff`0dfed2c2 4c8bc6          mov     r8,rsi
+00007fff`0dfed2c5 ba06000000      mov     edx,6
+00007fff`0dfed2ca e8b155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2cf 488bcb          mov     rcx,rbx
+00007fff`0dfed2d2 4c8bc6          mov     r8,rsi
+00007fff`0dfed2d5 ba07000000      mov     edx,7
+00007fff`0dfed2da e8a155ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed2df ff059f930400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed2e5 e97b010000      jmp     00007fff`0dfed465
+00007fff`0dfed2ea 83ff08          cmp     edi,8
+00007fff`0dfed2ed 0f85af000000    jne     00007fff`0dfed3a2
+00007fff`0dfed2f3 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed2fd ba09000000      mov     edx,9
+00007fff`0dfed302 e83971ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed307 488bd8          mov     rbx,rax
+00007fff`0dfed30a 488bcb          mov     rcx,rbx
+00007fff`0dfed30d 4c8bc6          mov     r8,rsi
+00007fff`0dfed310 33d2            xor     edx,edx
+00007fff`0dfed312 e86955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed317 488bcb          mov     rcx,rbx
+00007fff`0dfed31a 4c8bc6          mov     r8,rsi
+00007fff`0dfed31d ba01000000      mov     edx,1
+00007fff`0dfed322 e85955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed327 488bcb          mov     rcx,rbx
+00007fff`0dfed32a 4c8bc6          mov     r8,rsi
+00007fff`0dfed32d ba02000000      mov     edx,2
+00007fff`0dfed332 e84955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed337 488bcb          mov     rcx,rbx
+00007fff`0dfed33a 4c8bc6          mov     r8,rsi
+00007fff`0dfed33d ba03000000      mov     edx,3
+00007fff`0dfed342 e83955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed347 488bcb          mov     rcx,rbx
+00007fff`0dfed34a 4c8bc6          mov     r8,rsi
+00007fff`0dfed34d ba04000000      mov     edx,4
+00007fff`0dfed352 e82955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed357 488bcb          mov     rcx,rbx
+00007fff`0dfed35a 4c8bc6          mov     r8,rsi
+00007fff`0dfed35d ba05000000      mov     edx,5
+00007fff`0dfed362 e81955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed367 488bcb          mov     rcx,rbx
+00007fff`0dfed36a 4c8bc6          mov     r8,rsi
+00007fff`0dfed36d ba06000000      mov     edx,6
+00007fff`0dfed372 e80955ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed377 488bcb          mov     rcx,rbx
+00007fff`0dfed37a 4c8bc6          mov     r8,rsi
+00007fff`0dfed37d ba07000000      mov     edx,7
+00007fff`0dfed382 e8f954ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed387 488bcb          mov     rcx,rbx
+00007fff`0dfed38a 4c8bc6          mov     r8,rsi
+00007fff`0dfed38d ba08000000      mov     edx,8
+00007fff`0dfed392 e8e954ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed397 ff05e7920400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed39d e9c3000000      jmp     00007fff`0dfed465
+00007fff`0dfed3a2 83ff09          cmp     edi,9
+00007fff`0dfed3a5 0f85ba000000    jne     00007fff`0dfed465
+00007fff`0dfed3ab 48b9a229a168ff7f0000 mov rcx,offset System_Private_CoreLib+0xe29a2 (00007fff`68a129a2)
+00007fff`0dfed3b5 ba0a000000      mov     edx,0Ah
+00007fff`0dfed3ba e88170ad5f      call    coreclr!MetaDataGetDispenser+0x72960 (00007fff`6dac4440)
+00007fff`0dfed3bf 488bd8          mov     rbx,rax
+00007fff`0dfed3c2 488bcb          mov     rcx,rbx
+00007fff`0dfed3c5 4c8bc6          mov     r8,rsi
+00007fff`0dfed3c8 33d2            xor     edx,edx
+00007fff`0dfed3ca e8b154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed3cf 488bcb          mov     rcx,rbx
+00007fff`0dfed3d2 4c8bc6          mov     r8,rsi
+00007fff`0dfed3d5 ba01000000      mov     edx,1
+00007fff`0dfed3da e8a154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed3df 488bcb          mov     rcx,rbx
+00007fff`0dfed3e2 4c8bc6          mov     r8,rsi
+00007fff`0dfed3e5 ba02000000      mov     edx,2
+00007fff`0dfed3ea e89154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed3ef 488bcb          mov     rcx,rbx
+00007fff`0dfed3f2 4c8bc6          mov     r8,rsi
+00007fff`0dfed3f5 ba03000000      mov     edx,3
+00007fff`0dfed3fa e88154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed3ff 488bcb          mov     rcx,rbx
+00007fff`0dfed402 4c8bc6          mov     r8,rsi
+00007fff`0dfed405 ba04000000      mov     edx,4
+00007fff`0dfed40a e87154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed40f 488bcb          mov     rcx,rbx
+00007fff`0dfed412 4c8bc6          mov     r8,rsi
+00007fff`0dfed415 ba05000000      mov     edx,5
+00007fff`0dfed41a e86154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed41f 488bcb          mov     rcx,rbx
+00007fff`0dfed422 4c8bc6          mov     r8,rsi
+00007fff`0dfed425 ba06000000      mov     edx,6
+00007fff`0dfed42a e85154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed42f 488bcb          mov     rcx,rbx
+00007fff`0dfed432 4c8bc6          mov     r8,rsi
+00007fff`0dfed435 ba07000000      mov     edx,7
+00007fff`0dfed43a e84154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed43f 488bcb          mov     rcx,rbx
+00007fff`0dfed442 4c8bc6          mov     r8,rsi
+00007fff`0dfed445 ba08000000      mov     edx,8
+00007fff`0dfed44a e83154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed44f 488bcb          mov     rcx,rbx
+00007fff`0dfed452 4c8bc6          mov     r8,rsi
+00007fff`0dfed455 ba09000000      mov     edx,9
+00007fff`0dfed45a e82154ad5f      call    coreclr!MetaDataGetDispenser+0x70da0 (00007fff`6dac2880)
+00007fff`0dfed45f ff051f920400    inc     dword ptr [00007fff`0e036684]
+00007fff`0dfed465 ffc7            inc     edi
+00007fff`0dfed467 83ff0a          cmp     edi,0Ah
+00007fff`0dfed46a 0f8c12fbffff    jl      00007fff`0dfecf82
+00007fff`0dfed470 4883c420        add     rsp,20h
+
+Method got inlined
+paramsBenchmark.RefType..ctor(Int32)
+paramsBenchmark.FooParams.BarObject(System.Object[])
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

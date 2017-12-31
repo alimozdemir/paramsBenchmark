@@ -2,10 +2,16 @@ namespace paramsBenchmark
 {
     public class FooParams
     {
-        public static int Count;
-        public static void Bar(params object[] args)
+        public static int BarObjectCount, BarIntegerCount;
+        public static void BarObject(params object[] args)
         {
-            Count++;
+            BarObjectCount++;
         }
+
+        public static void BarInteger(params int[] args)
+        {
+            BarIntegerCount++;
+        }
+        
     }
 }
